@@ -21,18 +21,25 @@ ergebnisse2 = {}
 images      = {}
 
 
-list_concentration = ["0,001", "0,0025", "0,005", "0,0075", "0,01", "0,025", "0,05", "0,075", "0,1", "0,25", "0,5", "0,75", "1", "2,5", "5", "7,5", "10", "25", "50", "75", "100", "250", "500", "750", "1000"]
+list_concentration = ["^0,001$", "^0,0025$", "0,005", "0,0075", "0,01", "0,025", "0,05", "0,075", "0,1", "0,25", "0,5", "0,75", "1", "2,5", "5", "7,5", "10", "25", "50", "75", "100", "250", "500", "750", "1000"]
+
+newList = ["_0,1mM", "_0,5mM", "_0,75mM" "_0,25mM", "_0,05mM", "_0,075mM", "_1mM", "_2,5mM", "_5mM", "_7,5mM", "_10mM", "_25mM", "_50mM", "_75mM", "_100mM", "_250mM"]
+
 
 correct_list = []
 
 for i in files:
     path = string = str(i)
-    for j in list_concentration:
+    #print(path)
+    for j in newList:
         ret = re.search(j, path)
+        print(ret)
+        #print(ret)
         if ret != None:
             correct_list.append(i)
+            print(i)
         else:
-            print("oder auch nich")
+            None
 
 print(correct_list, "die richtige liste")
 
