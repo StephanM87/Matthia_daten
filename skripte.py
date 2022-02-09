@@ -21,6 +21,25 @@ ergebnisse2 = {}
 images      = {}
 
 
+list_concentration = ["0,05", "0,1"]
+
+correct_list = []
+
+for i in files:
+    path = string = str(i)
+    for j in list_concentration:
+        ret = re.search(j, path)
+        if ret != None:
+            correct_list.append(i)
+        else:
+            print("oder auch nich")
+
+print(correct_list, "die richtige liste")
+
+        
+
+
+
 unsorted_files = []
 for i in files:
     # c_date is the creation date of the respective file
@@ -53,10 +72,12 @@ for i in files:
     ret = re.search("0,05", string)
     ret01 = re.search("0,1", string)
     if ret != None:
-        print(ret, "0,05 konzentration")
+        None
+        #print(ret, "0,05 konzentration")
 
     elif ret01!=None:
-        print(ret01, "0,1 konzentration")
+        None
+        #print(ret01, "0,1 konzentration")
     
 
     
