@@ -1,4 +1,4 @@
-from pims import ND2_Reader
+#from pims import ND2_Reader
 import pathlib
 import pandas as pd
 import numpy as np
@@ -7,6 +7,61 @@ import matplotlib.pyplot as plt
 import os
 import time
 import re
+
+
+class FileSorter:
+
+    '''
+        This class handles the sorting of the Image Files. 
+        The target of this package is to create an ???? image of the measurements, therefore the files need to be sorted corretly. 
+        This is a challenge since these files have to be sorted according to the substrate concentrations in their path.
+
+        args:
+            folder: String; String which directs to the folder in which the measurement files are located
+
+        returns:
+            None
+    '''
+
+    def __init__(self, folder):
+        self.folder = folder
+
+    
+    def upload_files(self):
+        '''
+            uploads the measurement files from the local storage and returns an unsorted list with the measurement files
+
+            args:
+                folder: String; String which directs to the folder in which the measurement files are located
+            
+            returns:
+                files: List; List containing the unsorted files
+
+        '''
+        folder = pathlib.Path(repr(self.folder))
+        files = [file for file in folder.glob('*.nd2')] #hier werden die Datei namen der einzelen Dateien hinterlegt
+        return files
+
+    def sorting_strings(self):
+
+        '''
+            Defines the regular expression list which should be screened for
+
+            args:
+                None
+            
+            returns:
+                reg_expression: List; returns list with search patterns
+
+        '''
+        reg_expression = ["_0,1mM", "_0,5mM", "_0,75mM" "_0,25mM", "_0,05mM", "_0,075mM", "_1mM", "_2,5mM", "_5mM", "_7,5mM", "_10mM", "_25mM", "_50mM", "_75mM", "_100mM", "_250mM"]
+
+        return reg_expression
+
+    
+    
+
+
 
 
 
