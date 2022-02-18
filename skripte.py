@@ -87,12 +87,13 @@ for i in newList:
     #path: str = str(i)
     #print(path)
     for j in files:
-        path: str = str(j)
-        ret = re.search(path, i)
+        path_string=str(j)
+        path = repr(path_string) 
+        print(path)
+        ret = re.search(i, path)
         print(ret)
-        #print(ret)
         if ret != None:
-            correct_list.append(i)
+            correct_list.append(j)
             print(i)
         else:
             None
