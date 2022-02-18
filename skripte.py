@@ -18,7 +18,7 @@ class FileSorter:
 
         args:
             folder: String; String which directs to the folder in which the measurement files are located
-
+Stephan iost der Beste
         returns:
             None
     '''
