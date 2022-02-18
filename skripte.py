@@ -12,7 +12,7 @@ import re
 class FileSorter:
 
     '''
-        This class handles the sorting of the Image Files. 
+        This class handles thawdawdwdadwawdawdawdawdawadwdawdawdawdawdawdawdawdawdawdae sorting of the Image Files. 
         The target of this package is to create an ???? image of the measurements, therefore the files need to be sorted corretly. 
         This is a challenge since these files have to be sorted according to the substrate concentrations in their path.
 
