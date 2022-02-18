@@ -65,7 +65,7 @@ Stephan iost der Beste
 
 
 
-folder = pathlib.Path(r"C:\Users\rieb\Desktop\Experiments\Mikroskopie\soluble MP38.8.10\Repetition") #in diesem Ordner liegen die Dateien, muss angepasst werden!
+folder = pathlib.Path(r"F:\Juelich\soluble MP38.8.10") #in diesem Ordner liegen die Dateien, muss angepasst werden!
 files = [file for file in folder.glob('*.nd2')] #hier werden die Datei namen der einzelen Dateien hinterlegt
 
 
@@ -83,11 +83,12 @@ newList = ["_0,1mM", "_0,5mM", "_0,75mM" "_0,25mM", "_0,05mM", "_0,075mM", "_1mM
 
 correct_list = []
 
-for i in files:
-    path = string = str(i)
+for i in newList:
+    #path: str = str(i)
     #print(path)
-    for j in newList:
-        ret = re.search(j, path)
+    for j in files:
+        path: str = str(j)
+        ret = re.search(path, i)
         print(ret)
         #print(ret)
         if ret != None:
